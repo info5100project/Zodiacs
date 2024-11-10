@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewUserProfileController">
+   <children>
+      <TextField layoutX="236.0" layoutY="520.0" />
+      <PasswordField layoutX="236.0" layoutY="560.0" />
+      <Label layoutX="137.0" layoutY="564.0" text="User Name" />
+      <Label layoutX="135.0" layoutY="605.0" text="Password" />
+      <TextField layoutX="236.0" layoutY="601.0" />
+      <TextField layoutX="236.0" layoutY="478.0" />
+      <TextField layoutX="236.0" layoutY="360.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField layoutX="236.0" layoutY="319.0" />
+      <TextField layoutX="236.0" layoutY="440.0" />
+      <TextField layoutX="236.0" layoutY="400.0" />
+      <TextField fx:id="firstNameInput" layoutX="236.0" layoutY="280.0" />
+      <Label layoutX="136.0" layoutY="524.0" text="Weight (Lbs)" />
+      <Label layoutX="139.0" layoutY="482.0" text="Phone" />
+      <Label layoutX="138.0" layoutY="404.0" text="Height (Inches)" />
+      <Label layoutX="140.0" layoutY="364.0" text="Email" />
+      <Label layoutX="139.0" layoutY="444.0" text="Age" />
+      <Label layoutX="139.0" layoutY="323.0" text="Last Name" />
+      <Label layoutX="141.0" layoutY="284.0" text="First Name" />
+      <Label layoutX="248.0" layoutY="129.0" text="Add User Form">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+<!--       <Button layoutX="283.0" layoutY="507.0" mnemonicParsing="false" onAction="#saveUserProfile" text="Upload" /> -->
+   </children>
+</AnchorPane>
