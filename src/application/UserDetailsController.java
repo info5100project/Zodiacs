@@ -1,21 +1,23 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import application.model.UserProfile;
 import application.repository.ConnectionManager;
 import application.repository.UserProfileManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class UserDetailsController implements Initializable {
@@ -62,15 +64,13 @@ public class UserDetailsController implements Initializable {
 
 						manager.updateUser(profile);
 						
-						Alert errorAlert = new Alert(AlertType.INFORMATION);
-						errorAlert.setHeaderText("Data Updated");
-						errorAlert.showAndWait();
 					}
 					
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 				}
 				
+				goToNextScene(event, "logged-in-page.fxml", "Welcome To Zodiacs", userName);
 				
 			}
 		});
@@ -78,9 +78,20 @@ public class UserDetailsController implements Initializable {
 
 	}
 	
-	private void showError(String msg)
-	{
-		
+	private void goToNextScene(ActionEvent event, String fileName, String title, String userName) {
+
+		Parent root = null;
+		try {
+			root = FXMLLoader.load(getClass().getResource(fileName));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		stage.setTitle(title);
+		stage.setUserData(userName);
+		stage.setScene(new Scene(root, 400, 500));
+		stage.show();
+
 	}
 
 }

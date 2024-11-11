@@ -2,6 +2,7 @@ package application;
 
 import java.sql.SQLException;
 
+import application.model.UserProfile;
 import application.repository.ConnectionManager;
 import application.repository.UserProfileManager;
 

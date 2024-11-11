@@ -7,26 +7,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserDetailsController">
+<AnchorPane  prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserDetailsController">
    <children>
-      <Label layoutX="281.0" layoutY="48.0" text="Add User Details">
+      <Label layoutX="142.0" layoutY="47.0" text="Add User Details">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="173.0" layoutY="147.0" text="First Name" />
-      <Label layoutX="174.0" layoutY="192.0" text="Last Name" />
-      <TextField fx:id="tf_first_name" layoutX="272.0" layoutY="143.0" />
-      <PasswordField fx:id="tf_last_name" layoutX="272.0" layoutY="188.0" />
-      <Button fx:id="btn_save" layoutX="285.0" layoutY="390.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Save" textFill="#f7f4f4">
+      <Label layoutX="57.0" layoutY="109.0" text="First Name" />
+      <Label layoutX="58.0" layoutY="152.0" text="Last Name" />
+      <TextField fx:id="tf_first_name" layoutX="139.0" layoutY="105.0" />
+      <TextField fx:id="tf_last_name" layoutX="139.0" layoutY="148.0" />
+      <Button fx:id="btn_save" layoutX="146.0" layoutY="338.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Save" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="174.0" layoutY="237.0" text="Age" />
-      <Label layoutX="174.0" layoutY="282.0" text="Height (Inches)" />
-      <TextField fx:id="tf_age" layoutX="272.0" layoutY="233.0" />
-      <PasswordField fx:id="tf_height" layoutX="272.0" layoutY="278.0" />
-      <Label layoutX="174.0" layoutY="328.0" text="Weight (Lbs)" />
-      <PasswordField fx:id="tf_weight" layoutX="272.0" layoutY="324.0" />
+      <Label layoutX="58.0" layoutY="195.0" text="Age" />
+      <Label layoutX="58.0" layoutY="239.0" text="Height (Inches)" />
+      <TextField fx:id="tf_age" layoutX="139.0" layoutY="191.0" />
+      <TextField fx:id="tf_height" layoutX="139.0" layoutY="235.0" />
+      <Label layoutX="58.0" layoutY="283.0" text="Weight (Lbs)" />
+      <TextField fx:id="tf_weight" layoutX="139.0" layoutY="279.0" />
    </children>
 </AnchorPane>

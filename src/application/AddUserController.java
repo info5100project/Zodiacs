@@ -5,6 +5,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import application.model.UserProfile;
 import application.repository.ConnectionManager;
 import application.repository.UserProfileManager;
 import javafx.event.ActionEvent;
@@ -19,7 +20,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class AddUserController implements Initializable {
@@ -34,7 +34,16 @@ public class AddUserController implements Initializable {
 	@FXML
 	private Button btn_sign_up;
 	
-
+	@FXML
+    private Button btn_login;
+	
+	private Scene loginScene;
+	
+	
+	public void setPreScene(Scene loginScene) {
+        this.loginScene = loginScene;
+    }
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		btn_sign_up.setOnAction(new EventHandler<ActionEvent>() {
@@ -83,6 +92,18 @@ public class AddUserController implements Initializable {
 					goToNextScene(event, "user-details.fxml", "User Details", tf_username.getText() );
 			}
 		});
+		
+		
+		btn_login.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(loginScene);
+				stage.show();
+			}
+		});
 
 	}
 	
@@ -97,14 +118,14 @@ public class AddUserController implements Initializable {
 
 		Parent root = null;
 		try {
-			root = FXMLLoader.load(SceneManager.class.getResource(fileName));
+			root = FXMLLoader.load(getClass().getResource(fileName));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		stage.setTitle(title);
 		stage.setUserData(userName);
-		stage.setScene(new Scene(root, 800, 600));
+		stage.setScene(new Scene(root, 400, 500));
 		stage.show();
 
 	}

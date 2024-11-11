@@ -7,19 +7,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddUserController">
+<AnchorPane prefHeight="358.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddUserController">
    <children>
-      <Label layoutX="322.0" layoutY="49.0" text="Add User">
+      <Label layoutX="176.0" layoutY="43.0" text="Add User">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="173.0" layoutY="147.0" text="User Name" />
-      <Label layoutX="173.0" layoutY="192.0" text="Password" />
-      <TextField fx:id="tf_username" layoutX="272.0" layoutY="143.0" />
-      <PasswordField fx:id="tf_password" layoutX="272.0" layoutY="188.0" />
-      <Button fx:id="btn_sign_up" layoutX="285.0" layoutY="244.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Create" textFill="#f7f4f4">
+      <Label layoutX="72.0" layoutY="147.0" text="User Name" />
+      <Label layoutX="76.0" layoutY="191.0" text="Password" />
+      <TextField fx:id="tf_username" layoutX="138.0" layoutY="143.0" />
+      <PasswordField fx:id="tf_password" layoutX="138.0" layoutY="188.0" />
+      <Button fx:id="btn_sign_up" layoutX="151.0" layoutY="233.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Create" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="124.0" layoutY="297.0" text="Already a member ? " />
+      <Button fx:id="btn_login" layoutX="234.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: green;" text="Login in" textFill="#f2f5f3">
+         <font>
+            <Font name="System Bold" size="12.0" />
          </font>
       </Button>
    </children>
