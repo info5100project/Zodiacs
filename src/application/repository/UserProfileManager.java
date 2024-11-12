@@ -121,7 +121,7 @@ public class UserProfileManager {
 	private void createTable() {
 		String sql = "CREATE TABLE Users (" + "UserID" + " integer primary key," + "FirstName" + " VARCHAR,"
 				+ "LastName" + " VARCHAR," + "Age" + " VARCHAR," + "Height" + " VARCHAR," + "Weight" + " VARCHAR," 
-				+ "UserName" + " VARCHAR," + "Password"	+ "  VARCHAR,";
+				+ "UserName" + " VARCHAR," + "Password"	+ "  VARCHAR)";
 		try (Statement statement = connection.createStatement()) {
 			statement.execute(sql);
 		} catch (SQLException exception) {
