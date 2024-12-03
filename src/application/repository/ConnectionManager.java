@@ -8,7 +8,7 @@ public class ConnectionManager {
 
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Class.forName("org.sqlite.JDBC");
-		String dbURL = "jdbc:sqlite:C:\\Users\\EHG\\Downloads\\database\\zodiacdb2";
+		String dbURL = "jdbc:sqlite:zodiacdb2";
         return DriverManager.getConnection(dbURL);
 	}
 }

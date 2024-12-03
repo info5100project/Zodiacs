@@ -22,11 +22,16 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
 
 public class Main extends Application {
+	
+	Button loginButton = new Button("Login");
+	
 	@Override
 	public void start(Stage primaryStage) throws FileNotFoundException {
         BorderPane borderPane = new BorderPane();
@@ -42,26 +47,21 @@ public class Main extends Application {
         imageView.setFitHeight(150);
         
         //create a label as the app title
-        Label titleLabel = new Label("Welcome to The Zodiacs");
+        Label titleLabel = new Label("WELCOME TO Z - FITNESS");
         titleLabel.setStyle("-fx-font-family: Verdana; -fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 18px;");
         
         //create text field for user name input
         TextField usernameField = new TextField();
         usernameField.setPromptText("Username");
-        usernameField.setLayoutX(130);
         usernameField.setLayoutX(143);
         usernameField.setMaxWidth(150);
         
         //create password field for password input
         PasswordField passwordField = new PasswordField();
         passwordField.setPromptText("Password");
-        passwordField.setLayoutX(130);
         passwordField.setLayoutX(188);
         passwordField.setMaxWidth(150);
 
-        //create login button
-        Button loginButton = new Button("Login");
-        
         //no account, ask the user if they want to create an account
         Label accountLabel = new Label("No account? Create a new one!");
         Button createAccount = new Button("Create a new account");
@@ -69,11 +69,12 @@ public class Main extends Application {
 
         //add action handler for login button
         loginButton.setOnAction(event -> {
-            String username = usernameField.getText().trim();
+            String userName = usernameField.getText().trim();
             String password = passwordField.getText().trim();
 
-            if (checkCredentials(username, password)) {
-                showAlert(AlertType.INFORMATION, "Login Successful", "Welcome, " + username);
+            if (checkCredentials(userName, password)) {
+                goToNextScene(event, "dashboard-analytics.fxml", "WELCOME TO Z - FITNESS", userName);
+                
             } else {
                 showAlert(AlertType.ERROR, "Login Failed", "Invalid username or password");
             }
@@ -86,9 +87,10 @@ public class Main extends Application {
 				
 				try {
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("add-user.fxml"));
-				Scene scene = new Scene(fxmlLoader.load(), 400, 500);
+				Scene scene = new Scene(fxmlLoader.load(), 821.0, 591.0);
 				AddUserController controller = fxmlLoader.getController();
 				controller.setPreScene(createAccount.getScene());
+				controller.setLogoutScene(loginButton.getScene());
 				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				stage.setTitle("Sign Up");
 				stage.setScene(scene);
@@ -106,7 +108,8 @@ public class Main extends Application {
         borderPane.setCenter(vbox);
         
         //create the scene and set it on the stage
-        Scene scene = new Scene(borderPane, 400, 500);
+        Scene scene = new Scene(borderPane, 821.0, 591.0);
+        
         primaryStage.setTitle("Login!");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -126,8 +129,8 @@ public class Main extends Application {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-        return false;  // Return false if no matching credentials were found
+		// Return false if no matching credentials were found
+        return false;
     }
 	
     private void showAlert(AlertType alertType, String title, String message) {
@@ -137,6 +140,23 @@ public class Main extends Application {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    
+    private void goToNextScene(ActionEvent event, String fileName, String title, String userName) {
+
+    	try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fileName));
+			Scene scene = new Scene(fxmlLoader.load(), 821.0, 591.0);
+			DashboardAnalyticsController controller = fxmlLoader.getController();
+			controller.setLogOutScene(loginButton.getScene());
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle(title);
+			stage.setScene(scene);
+			stage.setUserData(userName);
+			stage.show();	
+			} catch (Exception e) {
+		         e.printStackTrace();
+		      }
+	}
 
 	
 	public static void main(String[] args) {

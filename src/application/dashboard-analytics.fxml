@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardAnalyticsController">
+   <top>
+      <Pane prefHeight="53.0" prefWidth="822.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="12.0" text="Z - FITNESS" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="743.0" layoutY="15.0" mnemonicParsing="false" onAction="#logOutButton" text="Log Out" />
+         </children></Pane>
+   </top>
+   <left>
+      <VBox prefHeight="538.0" prefWidth="187.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: #3e6be7; -fx-border-color: royalblue;" text="Weight Analytics" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#runningTimerPage" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: transparent;" text="Running Timer" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#bikingTimerPage" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: transparent;" text="Indoor Biking Timer" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children></VBox>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="22.0" layoutY="21.0" text="Weight Analytics" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="51.0" text="Enter The Weight in Kg against each Day" textFill="#7094ff" />
+            <Label layoutX="22.0" layoutY="79.0" text="Monday" />
+            <TextField fx:id="mon" layoutX="22.0" layoutY="98.0" promptText="Weight on Monday" style="-fx-background-color: white; -fx-border-color: #3e6be7; -fx-border-radius: 10;" />
+            <Label layoutX="242.0" layoutY="79.0" text="Tuesday" />
+            <TextField fx:id="tue" layoutX="242.0" layoutY="98.0" promptText="Weight on Tuesday" style="-fx-background-color: white; -fx-border-color: #3e6be7; -fx-border-radius: 10;" />
+            <Label layoutX="448.0" layoutY="77.0" text="Wednesday" />
+            <TextField fx:id="wed" layoutX="448.0" layoutY="96.0" promptText="Weight on Wednesday" style="-fx-background-color: white; -fx-border-color: #3e6be7; -fx-border-radius: 10;" />
+            <Label layoutX="22.0" layoutY="136.0" text="Thursday" />
+            <TextField fx:id="thur" layoutX="22.0" layoutY="155.0" promptText="Weight on Thursday" style="-fx-background-color: white; -fx-border-color: #3e6be7; -fx-border-radius: 10;" />
+            <Label layoutX="242.0" layoutY="136.0" text="Friday" />
+            <TextField fx:id="fri" layoutX="242.0" layoutY="155.0" promptText="Weight on Friday" style="-fx-background-color: white; -fx-border-color: #3e6be7; -fx-border-radius: 10;" />
+            <Separator layoutX="22.0" layoutY="209.0" prefHeight="2.0" prefWidth="588.0" />
+            <Button layoutX="445.0" layoutY="156.0" mnemonicParsing="false" onAction="#onShowChartClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #3e6be7; -fx-background-radius: 10;" text="Generate Chart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <BarChart fx:id="chart" layoutX="27.0" layoutY="226.0" prefHeight="292.0" prefWidth="587.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

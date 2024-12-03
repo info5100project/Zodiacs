@@ -14,7 +14,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -23,7 +22,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class AddUserController implements Initializable {
-	
 	
 	@FXML
 	private TextField tf_username;
@@ -38,11 +36,16 @@ public class AddUserController implements Initializable {
     private Button btn_login;
 	
 	private Scene loginScene;
+	private Scene logOutScene;
 	
 	
 	public void setPreScene(Scene loginScene) {
         this.loginScene = loginScene;
     }
+	
+	public void setLogoutScene(Scene logOutScene) {
+		 this.logOutScene = logOutScene;		
+	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -98,7 +101,6 @@ public class AddUserController implements Initializable {
 
 			@Override
 			public void handle(ActionEvent event) {
-
 				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				stage.setScene(loginScene);
 				stage.show();
@@ -115,19 +117,22 @@ public class AddUserController implements Initializable {
 	}
 	
 	private void goToNextScene(ActionEvent event, String fileName, String title, String userName) {
-
-		Parent root = null;
+		
 		try {
-			root = FXMLLoader.load(getClass().getResource(fileName));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fileName));
+			Scene scene = new Scene(fxmlLoader.load(), 821.0, 591.0);
+			
+			UserDetailsController controller = fxmlLoader.getController();
+			controller.setLogOutScene(logOutScene);
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle(title);
+			stage.setUserData(userName);
+			stage.setScene(scene);
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		stage.setTitle(title);
-		stage.setUserData(userName);
-		stage.setScene(new Scene(root, 400, 500));
-		stage.show();
-
+		
 	}
 
 }

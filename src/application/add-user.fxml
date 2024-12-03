@@ -4,29 +4,49 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="358.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddUserController">
-   <children>
-      <Label layoutX="176.0" layoutY="43.0" text="Add User">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddUserController">
+   <top>
+      <Pane prefHeight="53.0" prefWidth="822.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="12.0" text="Z - FITNESS" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </top>
+   <left>
+      <VBox prefHeight="538.0" prefWidth="187.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         </VBox>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+      <Label layoutX="280.0" layoutY="55.0" text="Add User">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="72.0" layoutY="147.0" text="User Name" />
-      <Label layoutX="76.0" layoutY="191.0" text="Password" />
-      <TextField fx:id="tf_username" layoutX="138.0" layoutY="143.0" />
-      <PasswordField fx:id="tf_password" layoutX="138.0" layoutY="188.0" />
-      <Button fx:id="btn_sign_up" layoutX="151.0" layoutY="233.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Create" textFill="#f7f4f4">
+      <Label layoutX="166.0" layoutY="161.0" text="User Name" />
+      <Label layoutX="167.0" layoutY="204.0" text="Password" />
+      <TextField fx:id="tf_username" layoutX="248.0" layoutY="157.0" />
+      <PasswordField fx:id="tf_password" layoutX="248.0" layoutY="200.0" />
+      <Button fx:id="btn_sign_up" layoutX="260.0" layoutY="247.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Create" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="124.0" layoutY="297.0" text="Already a member ? " />
-      <Button fx:id="btn_login" layoutX="234.0" layoutY="292.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: green;" text="Login in" textFill="#f2f5f3">
+      <Label layoutX="230.0" layoutY="301.0" text="Already a member ? " />
+      <Button fx:id="btn_login" layoutX="338.0" layoutY="297.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: green;" text="Login in" textFill="#f2f5f3">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
    </children>
-</AnchorPane>
+      </Pane>
+   </center>
+</BorderPane>

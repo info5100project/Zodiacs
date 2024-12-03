@@ -2,31 +2,50 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane  prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserDetailsController">
-   <children>
-      <Label layoutX="142.0" layoutY="47.0" text="Add User Details">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UserDetailsController">
+   <top>
+      <Pane prefHeight="53.0" prefWidth="822.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="12.0" text="Z - FITNESS" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </top>
+   <left>
+      <VBox prefHeight="538.0" prefWidth="187.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         </VBox>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+      <Label layoutX="251.0" layoutY="53.0" text="Add User Details">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="57.0" layoutY="109.0" text="First Name" />
-      <Label layoutX="58.0" layoutY="152.0" text="Last Name" />
-      <TextField fx:id="tf_first_name" layoutX="139.0" layoutY="105.0" />
-      <TextField fx:id="tf_last_name" layoutX="139.0" layoutY="148.0" />
-      <Button fx:id="btn_save" layoutX="146.0" layoutY="338.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Save" textFill="#f7f4f4">
+      <Label layoutX="166.0" layoutY="161.0" text="First Name" />
+      <Label layoutX="167.0" layoutY="204.0" text="Last Name" />
+      <TextField fx:id="tf_first_name" layoutX="248.0" layoutY="157.0" />
+      <TextField fx:id="tf_last_name" layoutX="248.0" layoutY="200.0" />
+      <Button fx:id="btn_save" layoutX="255.0" layoutY="390.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" style="-fx-background-color: blue;" text="Save" textFill="#f7f4f4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="58.0" layoutY="195.0" text="Age" />
-      <Label layoutX="58.0" layoutY="239.0" text="Height (Inches)" />
-      <TextField fx:id="tf_age" layoutX="139.0" layoutY="191.0" />
-      <TextField fx:id="tf_height" layoutX="139.0" layoutY="235.0" />
-      <Label layoutX="58.0" layoutY="283.0" text="Weight (Lbs)" />
-      <TextField fx:id="tf_weight" layoutX="139.0" layoutY="279.0" />
+      <Label layoutX="167.0" layoutY="247.0" text="Age" />
+      <Label layoutX="167.0" layoutY="291.0" text="Height (Inches)" />
+      <TextField fx:id="tf_age" layoutX="248.0" layoutY="243.0" />
+      <TextField fx:id="tf_height" layoutX="248.0" layoutY="287.0" />
+      <Label layoutX="167.0" layoutY="335.0" text="Weight (Lbs)" />
+      <TextField fx:id="tf_weight" layoutX="248.0" layoutY="331.0" />
    </children>
-</AnchorPane>
+      </Pane>
+   </center>
+</BorderPane>

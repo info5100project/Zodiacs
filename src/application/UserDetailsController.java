@@ -40,7 +40,7 @@ public class UserDetailsController implements Initializable {
 	@FXML
 	private Button btn_save;
 	
-	
+	private Scene logOutScene;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -63,14 +63,13 @@ public class UserDetailsController implements Initializable {
 						profile.setWeightInLbs(tf_weight.getText());
 
 						manager.updateUser(profile);
-						
 					}
 					
 				} catch (ClassNotFoundException | SQLException e) {
 					e.printStackTrace();
 				}
 				
-				goToNextScene(event, "logged-in-page.fxml", "Welcome To Zodiacs", userName);
+				goToNextScene(event, "dashboard-analytics.fxml", "WELCOME TO Z - FITNESS", userName);
 				
 			}
 		});
@@ -80,18 +79,25 @@ public class UserDetailsController implements Initializable {
 	
 	private void goToNextScene(ActionEvent event, String fileName, String title, String userName) {
 
-		Parent root = null;
 		try {
-			root = FXMLLoader.load(getClass().getResource(fileName));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fileName));
+			Scene scene = new Scene(fxmlLoader.load(), 821.0, 591.0);
+
+			DashboardAnalyticsController controller = fxmlLoader.getController();
+			controller.setLogOutScene(logOutScene);
+
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setTitle(title);
+			stage.setUserData(userName);
+			stage.setScene(scene);
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		stage.setTitle(title);
-		stage.setUserData(userName);
-		stage.setScene(new Scene(root, 400, 500));
-		stage.show();
+	}
 
+	public void setLogOutScene(Scene logOutScene) {
+		this.logOutScene = logOutScene;
 	}
 
 }

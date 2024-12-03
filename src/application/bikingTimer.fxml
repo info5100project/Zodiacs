@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BikingTimerController">
+   <top>
+      <Pane prefHeight="53.0" prefWidth="822.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="55.0" layoutY="12.0" text="Z - FITNESS" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="743.0" layoutY="15.0" mnemonicParsing="false" onAction="#logOutButton" text="Log Out" />
+         </children></Pane>
+   </top>
+   <left>
+      <VBox prefHeight="538.0" prefWidth="187.0" style="-fx-background-color: #cfdeff;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#weightAnalyticsPage" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: transparent;" text="Weight Analytics" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#runningTimerPage" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: transparent;" text="Running Timer" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="191.0" style="-fx-background-color: #3e6be7;" text="Indoor Biking Timer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children></VBox>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="22.0" layoutY="21.0" text="Indoor Biking Timer" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="51.0" text="Track your daily indoor biking time &amp; intervals" textFill="#7094ff" />
+            <Button fx:id="pauseResumeButton" layoutX="241.0" layoutY="244.0" mnemonicParsing="false" onAction="#onPauseResumeClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #3e6be7; -fx-background-radius: 10;" text="Pause" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Pane layoutX="243.0" layoutY="80.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 100; -fx-border-color: #3e6be7; -fx-border-radius: 100;">
+               <children>
+                  <Label fx:id="timeDisplay" layoutX="31.0" layoutY="58.0" style="-fx-font-size: 24px;" text="00:00:00" textFill="#3e6be7" />
+               </children>
+            </Pane>
+            <ListView fx:id="intervalList" layoutX="32.0" layoutY="325.0" prefHeight="167.0" prefWidth="576.0" />
+            <Button layoutX="409.0" layoutY="244.0" mnemonicParsing="false" onAction="#onCaptureIntervalClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #3e6be7; -fx-background-radius: 10;" text="Capture Interval" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="startStopButton" layoutX="72.0" layoutY="244.0" mnemonicParsing="false" onAction="#onStartStopClick" prefHeight="25.0" prefWidth="154.0" style="-fx-background-color: #3e6be7; -fx-background-radius: 10;" text="Start" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Separator layoutX="32.0" layoutY="286.0" prefHeight="6.0" prefWidth="573.0" />
+            <Label layoutX="32.0" layoutY="298.0" text="Intervals" textFill="#3e6be7">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
